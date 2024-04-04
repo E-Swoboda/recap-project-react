@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ThemeForm from "./ThemeForm";
 import ColorCard from "./ColorCard";
 import { themes as initialThemes } from "./db";
+import ThemeDetail from "./ThemeDetail";
 
 function App() {
   const [themes, setThemes] = useState(initialThemes);
@@ -14,6 +15,12 @@ function App() {
     setThemes(themes.filter((theme) => theme.id !== id));
   };
 
+  const handleEditTheme = (editedTheme) => {
+    setThemes(
+      themes.map((theme) => (theme.id === editedTheme.id ? editedTheme : theme))
+    );
+  };
+
   return (
     <>
       <header className="header">
@@ -24,7 +31,11 @@ function App() {
         <div className="theme-list">
           {themes.map((theme) => (
             <div key={theme.id}>
-              <h2>{theme.name}</h2>
+              <ThemeDetail
+                theme={theme}
+                onDelete={() => handleDeleteTheme(theme.id)}
+                onEdit={handleEditTheme}
+              />
               <ul className="color-list">
                 {theme.colors.map((color) => (
                   <li key={color.role}>
@@ -32,9 +43,6 @@ function App() {
                   </li>
                 ))}
               </ul>
-              <button onClick={() => handleDeleteTheme(theme.id)}>
-                Delete Theme
-              </button>
             </div>
           ))}
         </div>
