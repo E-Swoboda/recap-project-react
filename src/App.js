@@ -10,6 +10,10 @@ function App() {
     setThemes([newTheme, ...themes]);
   };
 
+  const handleDeleteTheme = (id) => {
+    setThemes(themes.filter((theme) => theme.id !== id));
+  };
+
   return (
     <>
       <header className="header">
@@ -28,6 +32,9 @@ function App() {
                   </li>
                 ))}
               </ul>
+              <button onClick={() => handleDeleteTheme(theme.id)}>
+                Delete Theme
+              </button>
             </div>
           ))}
         </div>
