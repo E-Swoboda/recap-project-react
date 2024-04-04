@@ -1,12 +1,13 @@
 .color-card {
-  width: 200px;
+  width: 350px;
   height: 150px;
-  border-radius: 10px;
+  border-radius: 100px;
   margin: 10px;
   padding: 10px;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .color-info {
