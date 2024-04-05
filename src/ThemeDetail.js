@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import EditForm from "./EditForm";
 
-const ThemeDetail = ({ theme, onDelete, onEdit }) => {
+const ThemeDetail = ({ theme, onDelete, onEdit, onTryOut }) => {
   const [displayState, setDisplayState] = useState("display"); // Initial display state
 
   const toggleEdit = () => {
@@ -22,6 +22,7 @@ const ThemeDetail = ({ theme, onDelete, onEdit }) => {
         <>
           <button onClick={toggleEdit}>Edit Theme</button>
           <button onClick={onDelete}>Delete Theme</button>
+          <button onClick={onTryOut}>Try Out</button>
         </>
       )}
     </div>

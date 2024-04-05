@@ -32,3 +32,9 @@ form {
   text-align: center;
   align-items: center;
 }
+
+.test-page-container {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px;
+}
