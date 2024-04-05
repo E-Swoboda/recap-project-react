@@ -3,7 +3,7 @@ import ThemeForm from "./ThemeForm";
 import ColorCard from "./ColorCard";
 import { themes as initialThemes } from "./db";
 import ThemeDetail from "./ThemeDetail";
-
+import "./App.css";
 function App() {
   const [themes, setThemes] = useState(initialThemes);
 

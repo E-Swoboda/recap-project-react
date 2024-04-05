@@ -2,17 +2,22 @@ import React, { useState } from "react";
 import EditForm from "./EditForm";
 
 const ThemeDetail = ({ theme, onDelete, onEdit }) => {
-  const [isEditing, setIsEditing] = useState(false);
+  const [displayState, setDisplayState] = useState("display"); // Initial display state
 
   const toggleEdit = () => {
-    setIsEditing(!isEditing);
+    setDisplayState(displayState === "display" ? "edit" : "display"); // Toggle between "edit" and "display" states
+  };
+
+  const handleEdit = (updatedTheme) => {
+    onEdit(updatedTheme);
+    setDisplayState("display");
   };
 
   return (
     <div>
       <h2>{theme.name}</h2>
-      {isEditing ? (
-        <EditForm theme={theme} onEdit={onEdit} onCancel={toggleEdit} /> // Pass onEdit function
+      {displayState === "edit" ? (
+        <EditForm theme={theme} onEdit={handleEdit} onCancel={toggleEdit} />
       ) : (
         <>
           <button onClick={toggleEdit}>Edit Theme</button>
