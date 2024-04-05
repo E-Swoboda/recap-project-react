@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import EditForm from "./EditForm";
-
+import "./App.css";
 const ThemeDetail = ({ theme, onDelete, onEdit, onTryOut }) => {
   const [displayState, setDisplayState] = useState("display"); // Initial display state
 

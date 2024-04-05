@@ -1,11 +1,16 @@
 .header {
   text-align: center;
+  font-family: fantasy;
 }
 
 .main-container {
-  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 200px;
   margin: 0 auto;
   padding: 20px;
+  font-family: fantasy;
 }
 
 .theme-list {
@@ -28,8 +33,6 @@
 form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
   align-items: center;
 }
 
@@ -37,4 +40,10 @@ form {
   background-color: var(--primary-color);
   color: white;
   padding: 20px;
+}
+
+button {
+  font-family: fantasy;
+  border-radius: 20px;
+  margin: 2px;
 }
